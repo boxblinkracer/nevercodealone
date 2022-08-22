@@ -1,0 +1,33 @@
+# Tag: {{ orca.tag }}
+# Copyright 2022 Christian Dangl
+#
+FROM {{ base_image }}
+LABEL title="NEVERCODEALONE {{ orca.image }}:{{ orca.tag }}"
+
+
+
+## ***********************************************************************
+##  BASE REQUIREMENTS
+## ***********************************************************************
+RUN apt-get update \
+    && apt-get install -y tzdata \
+    && dpkg-reconfigure --frontend noninteractive tzdata  \
+    && apt-get install -y software-properties-common \
+    && add-apt-repository ppa:ondrej/php \
+    && apt-get update \
+    {% block base %}
+    && apt-get install -y wget \
+    && apt-get install -y curl \
+    {% endblock %}
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+
+
+{% block php %}
+{% endblock %}
+
+
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod 755 /*.sh
+
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]

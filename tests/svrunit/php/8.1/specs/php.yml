@@ -1,0 +1,4 @@
+commands:
+  - name: "Test PHP 8.1"
+    command: "php -v"
+    expected: "PHP 8.1."

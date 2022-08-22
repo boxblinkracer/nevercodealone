@@ -1,0 +1,10 @@
+RUN apt-get update \
+    && apt-get install -y php8.1 \
+    && apt-get install -y php8.1-gd \
+    && apt-get install -y php8.1-iconv \
+    && apt-get install -y php8.1-intl \
+    && apt-get install -y php8.1-xml \
+    && apt-get install -y php8.1-mbstring \
+    && apt-get install -y php8.1-pdo \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+

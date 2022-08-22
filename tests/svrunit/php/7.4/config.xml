@@ -1,0 +1,11 @@
+<svrunit setupTime="5">
+
+    <testsuites>
+
+        <testsuite name="Docker Image with PHP 7.4" dockerImage="nevercodealone/php:7.4" dockerCommandRunner="true">
+            <directory>./specs</directory>
+        </testsuite>
+
+    </testsuites>
+
+</svrunit>

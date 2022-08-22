@@ -1,0 +1,10 @@
+RUN apt-get update \
+    && apt-get install -y php7.4 \
+    && apt-get install -y php7.4-gd \
+    && apt-get install -y php7.4-iconv \
+    && apt-get install -y php7.4-intl \
+    && apt-get install -y php7.4-xml \
+    && apt-get install -y php7.4-mbstring \
+    && apt-get install -y php7.4-pdo \
+    && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
+

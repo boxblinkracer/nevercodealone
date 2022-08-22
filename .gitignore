@@ -1,0 +1,5 @@
+/src/dist/
+/svrunit.phar
+/.reports/
+/.idea
+.DS_Store
