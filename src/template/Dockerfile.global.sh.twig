@@ -19,6 +19,7 @@ RUN apt-get update \
     && apt-get install -y wget \
     && apt-get install -y curl \
     {% endblock %}
+    && apt-get install -y apache2 \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
 
 

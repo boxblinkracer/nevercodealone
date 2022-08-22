@@ -3,3 +3,4 @@
 /.reports/
 /.idea
 .DS_Store
+/tests/cypress/node_modules/
